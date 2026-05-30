@@ -1,0 +1,208 @@
+{
+    "units": [
+        {
+            "unit_id": 1,
+            "unit_name": "基礎導數 (Basic)",
+            "bgm_path": "/sounds/10℃(BGM).mp3",
+            "bg_path": "/images/miko(bg).jpg",
+            "questions": [
+                {
+                    "id": "b1",
+                    "question": "\\frac{d}{dx}(x^n)",
+                    "options": [
+                        "nx^n",
+                        "nx^{n-1}",
+                        "x^{n-1}",
+                        "(n-1)x^n"
+                    ],
+                    "answer": 1,
+                    "explanation": "冪次法則：次方往前掉，次方減一。"
+                },
+                {
+                    "id": "b2",
+                    "question": "\\frac{d}{dx}(\\sin x)",
+                    "options": [
+                        "\\sin x",
+                        "-\\sin x",
+                        "\\cos x",
+                        "-\\cos x"
+                    ],
+                    "answer": 2,
+                    "explanation": "sin 的導數是 cos。"
+                },
+                {
+                    "id": "b3",
+                    "question": "\\frac{d}{dx}(e^x)",
+                    "options": [
+                        "xe^{x-1}",
+                        "e^x",
+                        "\\ln x",
+                        "e^x + C"
+                    ],
+                    "answer": 1,
+                    "explanation": "e^x 是微積分中最酷的函數，微分後還是自己。"
+                },
+                {
+                    "id": "b4",
+                    "question": "\\frac{d}{dx}(\\ln x)",
+                    "options": [
+                        "\\frac{1}{x}",
+                        "e^x",
+                        "\\frac{1}{x^2}",
+                        "x"
+                    ],
+                    "answer": 0,
+                    "explanation": "ln(x) 的斜率變化規律是 1/x。"
+                },
+                {
+                    "id": "b5",
+                    "question": "\\frac{d}{dx}(c) \\quad (c \\text{ 為常數})",
+                    "options": [
+                        "1",
+                        "c",
+                        "0",
+                        "x"
+                    ],
+                    "answer": 2,
+                    "explanation": "常數函數是一條水平線，斜率永遠是 0。"
+                }
+            ]
+        },
+        {
+            "unit_id": 2,
+            "unit_name": "進階規則 (Rules)",
+            "bgm_path": "/sounds/10℃(BGM).mp3",
+            "bg_path": "/images/miko(bg).jpg",
+            "questions": [
+                {
+                    "id": "r1",
+                    "question": "\\frac{d}{dx}(\\tan x)",
+                    "options": [
+                        "\\cot x",
+                        "\\sec x",
+                        "\\sec^2 x",
+                        "-\\sec^2 x"
+                    ],
+                    "answer": 2,
+                    "explanation": "tan 的導數是 sec 平方。"
+                },
+                {
+                    "id": "r2",
+                    "question": "\\frac{d}{dx}[f(g(x))]",
+                    "options": [
+                        "f'(g(x))",
+                        "f'(g'(x))",
+                        "f'(g(x))g'(x)",
+                        "f(g(x))g'(x)"
+                    ],
+                    "answer": 2,
+                    "explanation": "連鎖律 (Chain Rule)：外層微分乘上內層微分。"
+                },
+                {
+                    "id": "r3",
+                    "question": "\\frac{d}{dx}(\\frac{1}{x})",
+                    "options": [
+                        "\\ln x",
+                        "-\\frac{1}{x^2}",
+                        "\\frac{1}{x^2}",
+                        "-x^{-2}"
+                    ],
+                    "answer": 1,
+                    "explanation": "1/x 是 x^{-1}，微分得 -1 * x^{-2}。"
+                },
+                {
+                    "id": "r4",
+                    "question": "\\frac{d}{dx}(a^x)",
+                    "options": [
+                        "xa^{x-1}",
+                        "a^x",
+                        "a^x \\ln a",
+                        "\\frac{a^x}{\\ln a}"
+                    ],
+                    "answer": 2,
+                    "explanation": "一般指數函數微分要多乘一個 ln(底數)。"
+                },
+                {
+                    "id": "r5",
+                    "question": "\\frac{d}{dx}(\\sec x)",
+                    "options": [
+                        "\\sec x \\tan x",
+                        "\\tan^2 x",
+                        "\\sec^2 x",
+                        "-\\sec x \\tan x"
+                    ],
+                    "answer": 0,
+                    "explanation": "sec 的導數是 sec 乘以 tan。"
+                }
+            ]
+        },
+        {
+            "unit_id": 3,
+            "unit_name": "基礎積分 (Integration)",
+            "bgm_path": "/sounds/10℃(BGM).mp3",
+            "bg_path": "/images/miko(bg).jpg",
+            "questions": [
+                {
+                    "id": "i1",
+                    "question": "\\int x^n dx \\quad (n \\neq -1)",
+                    "options": [
+                        "nx^{n-1}",
+                        "\\frac{x^{n+1}}{n+1} + C",
+                        "\\frac{x^n}{n} + C",
+                        "x^{n+1} + C"
+                    ],
+                    "answer": 1,
+                    "explanation": "積分是微分的反運算：次方加一，除以新次方。"
+                },
+                {
+                    "id": "i2",
+                    "question": "\\int \\frac{1}{x} dx",
+                    "options": [
+                        "\\ln|x| + C",
+                        "-\\frac{1}{x^2} + C",
+                        "1",
+                        "e^x + C"
+                    ],
+                    "answer": 0,
+                    "explanation": "這是唯一不能用冪次法則積分的狀況，結果是自然對數。"
+                },
+                {
+                    "id": "i3",
+                    "question": "\\int \\cos x dx",
+                    "options": [
+                        "\\sin x + C",
+                        "-\\sin x + C",
+                        "\\cos x + C",
+                        "x \\cos x"
+                    ],
+                    "answer": 0,
+                    "explanation": "誰微分會得到 cos？答案是 sin。"
+                },
+                {
+                    "id": "i4",
+                    "question": "\\int e^x dx",
+                    "options": [
+                        "e^x",
+                        "e^x + C",
+                        "\\frac{e^x}{x} + C",
+                        "\\ln x + C"
+                    ],
+                    "answer": 1,
+                    "explanation": "e^x 的積分依然是 e^x，但別忘了加上常數 C。"
+                },
+                {
+                    "id": "i5",
+                    "question": "\\int 0 dx",
+                    "options": [
+                        "0",
+                        "x + C",
+                        "C",
+                        "1"
+                    ],
+                    "answer": 2,
+                    "explanation": "常數的微分是 0，所以 0 的積分是常數 C。"
+                }
+            ]
+        }
+    ]
+}

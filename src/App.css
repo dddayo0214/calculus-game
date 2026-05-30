@@ -1,38 +1,191 @@
-.App {
+/* src/App.css */
+.game-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2d3436;
+}
+
+.game-card {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 500px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  color: #6c5ce7;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.unit-button {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: none;
+  background: #6c5ce7;
+  color: white;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.unit-button:hover {
+  background: #a29bfe;
+  transform: translateY(-3px);
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.option-button {
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  background: white;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.option-button:hover {
+  border-color: #6c5ce7;
+  background: #f8f9fa;
+  transform: scale(1.02);
+}
+
+/* 進度條樣式 */
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #00b894;
+  transition: width 0.3s ease;
+}
+
+/* 正確答案的樣式 */
+.option-button.correct {
+  background-color: #55efc4 !important;
+  border-color: #00b894 !important;
+  color: #fff !important;
+}
+
+/* 錯誤答案的樣式 */
+.option-button.wrong {
+  background-color: #ff7675 !important;
+  border-color: #d63031 !important;
+  color: #fff !important;
+  animation: shake 0.4s;
+  /* 選錯時抖動 */
+}
+
+/* 抖動動畫定義 */
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  75% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 讓按鈕在被選中後不要有 hover 效果 */
+.option-button:disabled {
+  cursor: default;
+  transform: none;
+}
+
+/* 設定按鈕 */
+.settings-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid white;
   color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 10;
 }
 
-.App-link {
-  color: #61dafb;
+/* 遮罩背景 */
+.settings-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* 面板本體 */
+.settings-panel {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  width: 300px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.setting-item {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+}
+
+/* 滑動條樣式 */
+input[type="range"] {
+  cursor: pointer;
+  accent-color: #6c5ce7;
+  /* 讓進度條變成主色調 */
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.timer-urgent {
+  color: #d63031;
+  animation: blink 0.5s step-end infinite;
 }
